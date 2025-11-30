@@ -1,4 +1,5 @@
 **/.DS_Store
+**/.idea
 **/.settings
 **/.project
 **/.classpath
@@ -7,3 +8,6 @@
 **/bin
 **/*.iml
 /application/spring-shell.log
+/application/orion-cli.log
+/application/spring-shell-app.log
+/spring-shell-app.log

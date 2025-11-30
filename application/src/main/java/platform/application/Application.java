@@ -1,24 +1,24 @@
 package platform.application;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.shell.command.annotation.CommandScan;
-import org.springframework.shell.command.annotation.EnableCommand;
+import org.springframework.context.annotation.ComponentScan;
 import tools.jackson.databind.SerializationFeature;
 import tools.jackson.databind.cfg.DateTimeFeature;
 import tools.jackson.databind.json.JsonMapper;
 import tools.jackson.dataformat.yaml.YAMLMapper;
 
 @SpringBootApplication
-//@ComponentScan(basePackages = {"platform"})
-@CommandScan(basePackages = {"platform.application.command"})
-@EnableCommand
+@ComponentScan(basePackages = {"platform"})
 public class Application
 {
     static void main(String[] args)
     {
-        SpringApplication.run(Application.class, args);
+        SpringApplication application = new SpringApplication(Application.class);
+        application.setWebApplicationType(WebApplicationType.NONE);
+        application.run(args);
     }
 
 

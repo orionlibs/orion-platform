@@ -1,22 +1,22 @@
 package platform.application.command.help;
 
-import org.springframework.shell.command.annotation.Command;
-import org.springframework.shell.command.annotation.Option;
-import org.springframework.stereotype.Component;
+import org.springframework.shell.standard.ShellComponent;
+import org.springframework.shell.standard.ShellMethod;
+import org.springframework.shell.standard.ShellOption;
 
-@Component
+@ShellComponent
 public class HelpCommand
 {
-    @Command(command = "help")
-    public void run()
+    @ShellMethod(key = "help1")
+    public String help1()
     {
-        System.out.println("Available commands: help, time, echo, exit");
+        return "Available commands: help, time, echo, exit";
     }
 
 
-    @Command(command = "help2")
-    public void help2(@Option(defaultValue = "temp") String name)
+    @ShellMethod(key = "help2")
+    public String help2(@ShellOption(value = {"--name", "-n"}) String name)
     {
-        System.out.println("Available commands: help, help2. " + name);
+        return "Available commands: help, help2. " + name;
     }
 }
