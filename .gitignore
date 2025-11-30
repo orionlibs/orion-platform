@@ -6,3 +6,4 @@
 **/target
 **/bin
 **/*.iml
+/application/spring-shell.log

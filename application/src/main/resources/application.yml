@@ -1,11 +1,4 @@
 spring:
-  config:
-    activate:
-      on-profile: "!test"
-
-
----
-spring:
-  config:
-    activate:
-      on-profile: test
+  shell:
+    interactive:
+      enabled: true
