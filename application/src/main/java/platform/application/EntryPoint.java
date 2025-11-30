@@ -4,13 +4,14 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.time.LocalTime;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import platform.application.command.help.HelpCommand;
 
 @Component
 public class EntryPoint
 {
-    //@Autowired RunTestsCommandInputProcessor runTestsCommandInputProcessor;
-    //@Autowired RunTestsCommand runTestsCommand;
+    @Autowired HelpCommand helpCommand;
 
 
     public void run() throws IOException
@@ -26,7 +27,7 @@ public class EntryPoint
             }
             if(Argument.HELP.name().equalsIgnoreCase(line))
             {
-                System.out.println("Available commands: help, time, echo, exit");
+                helpCommand.run();
             }
             else if(Argument.TIME.name().equalsIgnoreCase(line))
             {
