@@ -5,4 +5,5 @@ java -jar "$JAR" <<'EOF'
 help
 time
 echo Hello
+exit
 EOF

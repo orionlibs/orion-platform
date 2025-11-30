@@ -47,5 +47,6 @@ public class BASHScriptTest
         assertThat(exitCode).isEqualTo(0);
         assertThat(output.contains("Application started")).isTrue();
         assertThat(output.contains("Hello")).isTrue();
+        assertThat(output.contains("Bye")).isTrue();
     }
 }

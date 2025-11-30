@@ -1,5 +1,6 @@
 package platform.search;
 
+import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,4 +12,5 @@ import lombok.NoArgsConstructor;
 @Builder
 public class SearchResponse
 {
+    private UUID id;
 }
