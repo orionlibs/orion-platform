@@ -24,19 +24,19 @@ public class EntryPoint
             {
                 continue;
             }
-            if("help".equalsIgnoreCase(line))
+            if(Argument.HELP.name().equalsIgnoreCase(line))
             {
-                System.out.println("Available commands: help");
+                System.out.println("Available commands: help, time, echo, exit");
             }
-            else if("time".equalsIgnoreCase(line))
+            else if(Argument.TIME.name().equalsIgnoreCase(line))
             {
                 System.out.println("Current time: " + LocalTime.now());
             }
-            else if(line.toLowerCase().startsWith("echo "))
+            else if(line.toLowerCase().startsWith(Argument.ECHO.name()))
             {
                 System.out.println(line.substring(5));
             }
-            else if("exit".equalsIgnoreCase(line))
+            else if(Argument.EXIT.name().equalsIgnoreCase(line))
             {
                 System.out.println("Bye");
                 System.exit(0);

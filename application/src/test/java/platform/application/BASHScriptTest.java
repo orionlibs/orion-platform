@@ -46,6 +46,7 @@ public class BASHScriptTest
         String output = new String(p.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
         assertThat(exitCode).isEqualTo(0);
         assertThat(output.contains("Application started")).isTrue();
+        assertThat(output.contains("Available commands: help, time, echo, exit")).isTrue();
         assertThat(output.contains("Hello")).isTrue();
         assertThat(output.contains("Bye")).isTrue();
     }
